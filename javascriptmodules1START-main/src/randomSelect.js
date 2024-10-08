@@ -1,3 +1,7 @@
 "use strict";
-export { randomSelect } from './index.js';
+
+export const randomSelect = (arr) => {
+  const randomIndex = Math.floor(Math.random() * arr.length);
+  return arr[randomIndex];
+};
 

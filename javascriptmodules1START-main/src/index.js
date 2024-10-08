@@ -1,14 +1,8 @@
 "use strict";
 
-import { averageForTest, averageForStudent } from './averages.js';
+import { averageForTest, averageForStudent } from './scoreCalc/average.js';
 import { printAll } from './display.js';
 import { randomSelect } from './randomSelect.js';
-
-export const randomSelect = (arr) => {
-  const randomIndex = Math.floor(Math.random() * arr.length);
-  return arr[randomIndex];
-};
-
 
 const astronauts = ['Fox', 'Turtle', 'Cat', 'Hippo', 'Dog'];
 const testTitles = ['Math', 'Fitness', 'Coding', 'Nav', 'Communication'];
@@ -19,7 +13,6 @@ const scores = [
   [99, 77, 91, 79, 80],
   [96, 95, 99, 82, 70]
 ];
-
 
 const prompts = ['display all scores', 'average the scores for each test', 'average the scores for each astronaut', 'select the next spacewalker'];
 

@@ -17,6 +17,3 @@ export const printAll = (names, tests, scores) => {
     console.log(row);
   });
 };
-
-  
-  
