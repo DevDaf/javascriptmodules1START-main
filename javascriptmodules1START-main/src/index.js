@@ -1,12 +1,13 @@
-"use strict";
+import { randomSelect } from './randomSelect.js'; 
+import { averageForTest, averageForStudent } from './ScoreCalc/averages.js'; 
+import { printAll } from './display.js'; 
 
-import { averageForTest, averageForStudent } from './scoreCalc/average.js';
-import { printAll } from './display.js';
-import { randomSelect } from './randomSelect.js';
 
-const astronauts = ['Fox', 'Turtle', 'Cat', 'Hippo', 'Dog'];
+let astronauts = ['Fox', 'Turtle', 'Cat', 'Hippo', 'Dog'];
+
 const testTitles = ['Math', 'Fitness', 'Coding', 'Nav', 'Communication'];
-const scores = [
+
+let scores = [
   [95, 86, 83, 81, 76],
   [79, 71, 79, 87, 72],
   [94, 87, 87, 83, 82],
@@ -14,24 +15,36 @@ const scores = [
   [96, 95, 99, 82, 70]
 ];
 
-const prompts = ['display all scores', 'average the scores for each test', 'average the scores for each astronaut', 'select the next spacewalker'];
 
-prompts.forEach((prompt, i) => {
-  console.log(prompt);
+let prompts = [
+  'display all scores',
+  'average the scores for each test',
+  'average the scores for each astronaut',
+  'select the next spacewalker'
+];
+
+for (let i = 0; i < prompts.length; i++) {
+  console.log(prompts[i]);
+  
   if (i === 0) {
+
     printAll(astronauts, testTitles, scores);
   } else if (i === 1) {
-    testTitles.forEach((testTitle, j) => {
-      const avg = averageForTest(j, scores);
-      console.log(`${testTitle} test average = ${avg}%.`);
-    });
+    for (let j = 0; j < testTitles.length; j++) {
+
+      let avg = averageForTest(j, scores);
+      console.log(`${testTitles[j]} test average = ${avg}%.`);
+    }
   } else if (i === 2) {
-    astronauts.forEach((astronaut, j) => {
-      const avg = averageForStudent(j, scores);
-      console.log(`${astronaut}'s test average = ${avg}%.`);
-    });
+    for (let j = 0; j < astronauts.length; j++) {
+
+      let avg = averageForStudent(j, scores);
+      console.log(`${astronauts[j]}'s test average = ${avg}%.`);
+    }
   } else {
-    const walker = randomSelect(astronauts);
+
+    let walker = randomSelect(astronauts);
     console.log(`${walker} is the next spacewalker.`);
   }
-});
+}
+
