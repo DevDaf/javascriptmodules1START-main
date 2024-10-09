@@ -1,6 +1,6 @@
-import { randomSelect } from './randomSelect.js'; 
-import { averageForTest, averageForStudent } from './ScoreCalc/averages.js'; 
-import { printAll } from './display.js'; 
+import { randomSelect } from './randomSelect.js';
+import { averageForTest, averageForStudent } from './ScoreCalc/averages.js'
+import { printAll } from './display.js'
 
 
 let astronauts = ['Fox', 'Turtle', 'Cat', 'Hippo', 'Dog'];
